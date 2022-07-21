@@ -9,11 +9,11 @@
          <h1 style="color:darkgreen"><b>Kantor</b></h1>
             <p><img src="skarbonka.jpg"  alt="Skarbonka świnka" tittle="skarbonka świnka" height="80" width="100"/> Wymień korzystnie swoje kieszonkowe </p>
             <h4><b>UWAGA:</b></h4> 
-            <p style="font-size:18px;"><img src= "kesz.jpg" alt="Kesz, dostępne waluty" tittle="waluty" height="250" width="500" align="right"/><br> W okienku z opisem "Podaj wartość do wymiany" wpisz kwotę, którą chcesz zamienić. <br>W najniszym oknie otrzymasz wartość po przeliczeniu na podstawie kursu NBP :)<br> <br> <span style="color:darkgreen">! POWODZENIA !</span></p><br>
+            <p style="font-size:18px;"><img src= "kesz.jpg" alt="Kesz, dostępne waluty" tittle="waluty" height="250" width="500" align="right"/><br> W oknie z opisem "Podaj wartość" kwotę jaką chcesz zakupić. <br>W najniszym oknie otrzymasz kwotę w PLN jaką potrzebujesz do zakupu wymaganej waluty (przeliczenie na podstawie kursu NBP :))<br> <br> <span style="color:darkgreen">! POWODZENIA !</span></p><br>
             
         </div>
         <div>
-            <form>
+            <form method="POST">
                 <label for="codes">Wybierz walutę:</label>
                 <select name="codes" id="codes">
                 <ul>
@@ -22,9 +22,9 @@
                     {% endfor %}
                 </ul>
                 </select>
-                <label for="amount">Wartość do wymiany w PLN <input type="text"></label>
+                <label for="amount">Ilość jaką chcesz zakupić<input type="text"></label>
                 <button>PRZELICZ</button>
-                <br><br><br><label>Wartość po przeliczeniu<input type="text"></label>
+                <br><br><br><label>Kwota transakcji<input type="text"></label>
             </form>
         </div>
     </body>
