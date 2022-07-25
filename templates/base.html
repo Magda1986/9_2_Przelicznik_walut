@@ -7,25 +7,26 @@
     <body style = "background-color: lightgrey;">
         <div>
          <h1 style="color:darkgreen"><b>Kantor</b></h1>
-            <p><img src="skarbonka.jpg"  alt="Skarbonka świnka" tittle="skarbonka świnka" height="80" width="100"/> Wymień korzystnie swoje kieszonkowe </p>
+            <p><img src="static/skarbonka.jpg"  alt="Skarbonka świnka" tittle="skarbonka świnka" height="80" width="100"/> Wymień korzystnie swoje kieszonkowe </p>
             <h4><b>UWAGA:</b></h4> 
-            <p style="font-size:18px;"><img src= "kesz.jpg" alt="Kesz, dostępne waluty" tittle="waluty" height="250" width="500" align="right"/><br> W oknie z opisem "Podaj wartość" kwotę jaką chcesz zakupić. <br>W najniszym oknie otrzymasz kwotę w PLN jaką potrzebujesz do zakupu wymaganej waluty (przeliczenie na podstawie kursu NBP :))<br> <br> <span style="color:darkgreen">! POWODZENIA !</span></p><br>
+            <p style="font-size:18px;"><img src= "static/kesz.jpg" alt="Kesz, dostępne waluty" tittle="waluty" height="250" width="500" align="right"/><br> W oknie z opisem "Podaj wartość" kwotę jaką chcesz zakupić. <br>W najniszym oknie otrzymasz kwotę w PLN jaką potrzebujesz do zakupu wymaganej waluty (przeliczenie na podstawie kursu NBP z dnia {{ data_kursu }})<br> <br> <span style="color:darkgreen">! POWODZENIA !</span></p><br>
             
         </div>
         <div>
             <form method="POST">
                 <label for="codes">Wybierz walutę:</label>
-                <select name="codes" id="codes">
-                <ul>
+                <select name="codes">
                     {% for code in codes %}
-                    <option name="codes" id="codes"><li>{{code}}</li></option>
+                    <option>{{code}}</option>
                     {% endfor %}
-                </ul>
                 </select>
-                <label for="amount">Ilość jaką chcesz zakupić<input type="text"></label>
+                <label for="amount">Ilość jaką chcesz zakupić</label>
+                <input type="text" name="amount">
                 <button>PRZELICZ</button>
-                <br><br><br><label>Kwota transakcji<input type="text"></label>
             </form>
+            {% if kwota %}
+            <br><br><br><label for="kwota">Kwota jaką muszisz zapłacić za transakcję w PLN {{ kwota }}.</label>
+            {% endif %}
         </div>
     </body>
 </html>
